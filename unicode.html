@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+function dothing()
+{
+	var s = document.getElementById('input').value;
+	var result = '';
+	for (var i = 0; i < s.length; i++)
+	{
+		result += s.charAt(i);
+		result += '\u0305';
+	}
+	document.getElementById('output').textContent = result;
+}
+</script>
+</head>
+<body>
+<input type="text" onkeyup="dothing()" id="input" autocomplete="off">
+<span id="output"></span>
+</body>
+</html>
+
