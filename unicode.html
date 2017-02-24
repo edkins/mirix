@@ -5,13 +5,7 @@
 function dothing()
 {
 	var s = document.getElementById('input').value;
-	var result = '';
-	for (var i = 0; i < s.length; i++)
-	{
-		result += s.charAt(i);
-		result += '\u0305';
-	}
-	document.getElementById('output').textContent = result;
+	document.getElementById('output').textContent = s + '\u0305';
 }
 </script>
 </head>
@@ -24,6 +18,7 @@ function dothing()
 &#120121;&#8469;&#8473;&#8474;&#8477;&#120141;𝕎<br>
 𝓔𝓕𝓢𝓛φΓ𝓟𝓒<br>
 ΓΔΘΛΞΣΦΨΩαβγδεζηθικλμνξπρςστφψω<br>
+overline = ctrl+shift+u 0305 enter
 </body>
 </html>
 
