@@ -37,7 +37,7 @@ function plot()
 	{
 		for (var x = 0; x < 400; x++)
 		{
-			var val = fn(x/400,y/400);
+			var val = fn(x/399,y/399);
 			var cval = Math.floor(val * 255);
 			var r, g, b;
 			if (cval > 255)
@@ -77,7 +77,7 @@ function plot()
 			g = Math.pow(g / 255, 0.6) * 255;
 			b = Math.pow(b / 255, 0.6) * 255;
 			c.fillStyle = 'rgb(' + Math.floor(r) + "," + Math.floor(g) + "," + Math.floor(b) + ')';
-			c.fillRect(x,y,1,1);
+			c.fillRect(x,399-y,1,1);
 		}
 	}
 	msg.textContent = '';
