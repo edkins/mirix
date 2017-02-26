@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+function plot()
+{
+	var c = document.getElementById('graph').getContext('2d');
+	var text = document.getElementById('expr').value;
+	var fn = Function("x","y","return " + text);
+	var msg = document.getElementById('msg');
+	msg.textContent = 'Graphing';
+	for (var y = 0; y < 400; y++)
+	{
+		for (var x = 0; x < 400; x++)
+		{
+			var val = fn(x/400,y/400);
+			var cval = Math.floor(val * 255);
+			if (cval > 255)
+			{
+				c.fillStyle = '#088';
+			}
+			else if (cval < -255)
+			{
+				c.fillStyle = '#808';
+			}
+			else if (cval > 0)
+			{
+				c.fillStyle = 'rgb(' + (255-cval) + "," + (255-Math.floor(cval/2)) + "," + (255-cval) + ')';
+			}
+			else
+			{
+				c.fillStyle = 'rgb(' + 255 + "," + (255+cval) + "," + (255+cval) + ')';
+			}
+			c.fillRect(x,y,1,1);
+		}
+	}
+	msg.textContent = '';
+}
+</script>
+</head>
+<body style="background:#ddd">
+<canvas width="400" height="400" id="graph"></canvas><br>
+<input type="text" id="expr"><input type="button" value="plot" onclick="plot()"><br>
+<span id="msg"></span>
+</body>
+</html>
