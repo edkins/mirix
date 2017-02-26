@@ -72,6 +72,10 @@ function plot()
 					r *= 0.8; g *= 0.8; b *= 0.8;
 				}
 			}
+			// rough gamma correction
+			r = Math.pow(r / 255, 0.6) * 255;
+			g = Math.pow(g / 255, 0.6) * 255;
+			b = Math.pow(b / 255, 0.6) * 255;
 			c.fillStyle = 'rgb(' + Math.floor(r) + "," + Math.floor(g) + "," + Math.floor(b) + ')';
 			c.fillRect(x,y,1,1);
 		}
